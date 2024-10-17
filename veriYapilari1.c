@@ -7,15 +7,10 @@ struct dugum {
 };
 
 int main() {
-    struct dugum* bir;
-    struct dugum* iki;
-    struct dugum* uc;
-    struct dugum* dort;
-
-    bir = (struct dugum*) malloc(sizeof(struct dugum));
-    iki = (struct dugum*) malloc(sizeof(struct dugum));
-    uc = (struct dugum*) malloc(sizeof(struct dugum));
-    dort = (struct dugum*) malloc(sizeof(struct dugum));
+    struct dugum* bir = (struct dugum*) malloc(sizeof(struct dugum));
+    struct dugum* iki = (struct dugum*) malloc(sizeof(struct dugum));
+    struct dugum* uc = (struct dugum*) malloc(sizeof(struct dugum));
+    struct dugum* dort = (struct dugum*) malloc(sizeof(struct dugum));
 
     bir->gosterici = iki;
     bir->veri = 11;
