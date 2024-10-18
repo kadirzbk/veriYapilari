@@ -1,25 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct dugum 
+struct bag 
 {
-    int veri;
-    struct dugum *gosterici;
+    int deger;
+    struct bag *gosterici;
 };
 
-struct dugum *bas = NULL;
-struct dugum *gecici = NULL;
+struct bag *bas = NULL;
+struct bag *gecici = NULL;
 
 void SonaEkle(int sayi) 
 {
-    struct dugum *eklenecek;
-    eklenecek = (struct dugum *) malloc(sizeof(struct dugum));
-    eklenecek->veri = sayi;
-    eklenecek->gosterici = NULL;
+    struct bag *bekleyen;
+    bekleyen = (struct bag *) malloc(sizeof(struct bag));
+    bekleyen->deger = sayi;
+    bekleyen->gosterici = NULL;
 
     if (bas == NULL) 
     {
-        bas = eklenecek;
+        bas = bekleyen;
     } 
     else 
     {
@@ -28,7 +28,7 @@ void SonaEkle(int sayi)
         {
             gecici = gecici->gosterici;
         }
-        gecici->gosterici = eklenecek;
+        gecici->gosterici = bekleyen;
     }
 }
 
@@ -37,22 +37,22 @@ void yazdir()
     gecici = bas;
     while (gecici->gosterici != NULL) 
     {
-        printf("%d ", gecici->veri);  
+        printf("%d ", gecici->deger);  
         gecici = gecici->gosterici;
     }
-    printf("%d ", gecici->veri);  
+    printf("%d ", gecici->deger);  
 }
 
 int main() 
 {
-    int adet = 0;
-    while (adet != 5) 
+    int miktar = 0;
+    while (miktar != 5) 
     {
         int sayi;
         printf("Bir sayi girin: ");
         scanf("%d", &sayi);
         SonaEkle(sayi);
-        adet++;
+        miktar++;
     }
     yazdir();
     return 0;
