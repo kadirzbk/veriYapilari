@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 struct bag {
-    int data;
+    int veri;
     struct bag *next;
 };
 
@@ -14,7 +14,7 @@ struct bag *temp = NULL;
 void basaEkle(int veri) {
     struct bag *eleman;
     eleman = (struct bag *) malloc(sizeof(struct bag));
-    eleman->data = veri;
+    eleman->veri = veri;
     eleman->next = start;
     start = eleman;
 }
@@ -22,7 +22,7 @@ void basaEkle(int veri) {
 void sonaEkle(int veri) {
     struct bag *eleman;
     eleman = (struct bag *) malloc(sizeof(struct bag));
-    eleman->data = veri;
+    eleman->veri = veri;
     eleman->next = NULL;
 
     if (start == NULL) {
@@ -39,7 +39,7 @@ void sonaEkle(int veri) {
 void arayaEkle(int n, int veri) {
     struct bag *eleman;
     eleman = (struct bag *) malloc(sizeof(struct bag));
-    eleman->data = veri;
+    eleman->veri = veri;
 
     temp = start;
 
@@ -50,7 +50,7 @@ void arayaEkle(int n, int veri) {
     }
 
    
-    while (temp != NULL && temp->data != n) {
+    while (temp != NULL && temp->veri != n) {
         temp = temp->next;
     }
 
@@ -101,7 +101,7 @@ void sondanSil()
 void aradanSil(int veri)
 {
 	temp= start;
-	if( temp->data==veri )
+	if( temp->veri==veri )
 	{
 		bastanSil();
 	}
@@ -110,7 +110,7 @@ void aradanSil(int veri)
 		struct bag * temp2;
 		temp2= (struct bag *) malloc (sizeof(struct bag  )) ;
 		
-		while(temp->next->data!= veri)
+		while(temp->next->veri!= veri)
 		{
 			temp= temp->next;
 			
@@ -143,10 +143,10 @@ void yazdir()
     
 	
 	{
-        printf("%d ", temp->data );
+        printf("%d ", temp->veri );
         temp = temp->next;
     } 
-	printf("%d ", temp->data );
+	printf("%d ", temp->veri );
    
     }
     else
