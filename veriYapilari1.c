@@ -1,30 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct dugum {
-    int veri;
-    struct dugum* gosterici;
+struct bag {
+    int deger;
+    struct bag* gosterici;
 };
 
 int main() {
-    struct dugum* bir = (struct dugum*) malloc(sizeof(struct dugum));
-    struct dugum* iki = (struct dugum*) malloc(sizeof(struct dugum));
-    struct dugum* uc = (struct dugum*) malloc(sizeof(struct dugum));
-    struct dugum* dort = (struct dugum*) malloc(sizeof(struct dugum));
+    struct bag* bir = (struct bag*) malloc(sizeof(struct bag));
+    struct bag* iki = (struct bag*) malloc(sizeof(struct bag));
+    struct bag* uc = (struct bag*) malloc(sizeof(struct bag));
+    struct bag* dort = (struct bag*) malloc(sizeof(struct bag));
 
     bir->gosterici = iki;
-    bir->veri = 11;
+    bir->deger = 11;
 
     iki->gosterici = uc;
-    iki->veri = 22;
+    iki->deger = 22;
 
     uc->gosterici = dort;
-    uc->veri = 33;
+    uc->deger = 33;
 
     dort->gosterici = NULL;
-    dort->veri = 44;
+    dort->deger = 44;
 
-    printf("%d %d %d %d\n", bir->veri, iki->veri, uc->veri, dort->veri);
+    printf("%d %d %d %d\n", bir->deger, iki->deger, uc->deger, dort->deger);
 
     return 0;
 }
