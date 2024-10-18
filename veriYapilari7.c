@@ -1,9 +1,12 @@
+////////////// 7. DERS
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
 struct bag 
 {
-    int data;
+    int veri;
     struct bag *next;
 };
 
@@ -14,7 +17,7 @@ void basaEkle(int veri)
 {
     struct bag *eleman;
     eleman = (struct bag *) malloc(sizeof(struct bag));
-    eleman->data = veri;
+    eleman->veri = veri;
     eleman->next = start;
     start = eleman;
 }
@@ -23,7 +26,7 @@ void sonaEkle(int veri)
 {
     struct bag *eleman;
     eleman = (struct bag *) malloc(sizeof(struct bag));
-    eleman->data = veri;
+    eleman->veri = veri;
     eleman->next = NULL;
 
     if (start == NULL) 
@@ -42,7 +45,7 @@ void arayaEkle(int n, int veri)
 {
     struct bag *eleman;
     eleman = (struct bag *) malloc(sizeof(struct bag));
-    eleman->data = veri;
+    eleman->veri = veri;
 
     temp = start;
 
@@ -54,7 +57,7 @@ void arayaEkle(int n, int veri)
     }
 
    
-    while (temp != NULL && temp->data != n) 
+    while (temp != NULL && temp->veri != n) 
     {
         temp = temp->next;
     }
@@ -114,10 +117,10 @@ void yazdir()
     
 	
 	{
-        printf("%d ", temp->data );
+        printf("%d ", temp->veri );
         temp = temp->next;
     } 
-	printf("%d ", temp->data );
+	printf("%d ", temp->veri );
    
     }
     else
