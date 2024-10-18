@@ -3,26 +3,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {
-    int veri;
-    struct node *next;
+struct bag {
+    int data;
+    struct bag *next;
 };
 
-struct node *start = NULL;
-struct node *temp = NULL;
+struct bag *start = NULL;
+struct bag *temp = NULL;
 
 void basaEkle(int veri) {
-    struct node *eleman;
-    eleman = (struct node *) malloc(sizeof(struct node));
-    eleman->veri = veri;
+    struct bag *eleman;
+    eleman = (struct bag *) malloc(sizeof(struct bag));
+    eleman->data = veri;
     eleman->next = start;
     start = eleman;
 }
 
 void sonaEkle(int veri) {
-    struct node *eleman;
-    eleman = (struct node *) malloc(sizeof(struct node));
-    eleman->veri = veri;
+    struct bag *eleman;
+    eleman = (struct bag *) malloc(sizeof(struct bag));
+    eleman->data = veri;
     eleman->next = NULL;
 
     if (start == NULL) {
@@ -37,9 +37,9 @@ void sonaEkle(int veri) {
 }
 
 void arayaEkle(int n, int veri) {
-    struct node *eleman;
-    eleman = (struct node *) malloc(sizeof(struct node));
-    eleman->veri = veri;
+    struct bag *eleman;
+    eleman = (struct bag *) malloc(sizeof(struct bag));
+    eleman->data = veri;
 
     temp = start;
 
@@ -50,7 +50,7 @@ void arayaEkle(int n, int veri) {
     }
 
    
-    while (temp != NULL && temp->veri != n) {
+    while (temp != NULL && temp->data != n) {
         temp = temp->next;
     }
 
@@ -101,16 +101,16 @@ void sondanSil()
 void aradanSil(int veri)
 {
 	temp= start;
-	if( temp->veri==veri )
+	if( temp->data==veri )
 	{
 		bastanSil();
 	}
 	else
 	{
-		struct node * temp2;
-		temp2= (struct node *) malloc (sizeof(struct node  )) ;
+		struct bag * temp2;
+		temp2= (struct bag *) malloc (sizeof(struct bag  )) ;
 		
-		while(temp->next->veri!= veri)
+		while(temp->next->data!= veri)
 		{
 			temp= temp->next;
 			
@@ -143,10 +143,10 @@ void yazdir()
     
 	
 	{
-        printf("%d ", temp->veri );
+        printf("%d ", temp->data );
         temp = temp->next;
     } 
-	printf("%d ", temp->veri );
+	printf("%d ", temp->data );
    
     }
     else
