@@ -1,25 +1,27 @@
+////////////// 8. DERS
+
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {
+struct bag {
     int data;
-    struct node *next;
+    struct bag *next;
 };
 
-struct node *start = NULL;
-struct node *temp = NULL;
+struct bag *start = NULL;
+struct bag *temp = NULL;
 
 void basaEkle(int veri) {
-    struct node *eleman;
-    eleman = (struct node *) malloc(sizeof(struct node));
+    struct bag *eleman;
+    eleman = (struct bag *) malloc(sizeof(struct bag));
     eleman->data = veri;
     eleman->next = start;
     start = eleman;
 }
 
 void sonaEkle(int veri) {
-    struct node *eleman;
-    eleman = (struct node *) malloc(sizeof(struct node));
+    struct bag *eleman;
+    eleman = (struct bag *) malloc(sizeof(struct bag));
     eleman->data = veri;
     eleman->next = NULL;
 
@@ -35,15 +37,15 @@ void sonaEkle(int veri) {
 }
 
 void arayaEkle(int n, int veri) {
-    struct node *eleman;
-    eleman = (struct node *) malloc(sizeof(struct node));
+    struct bag *eleman;
+    eleman = (struct bag *) malloc(sizeof(struct bag));
     eleman->data = veri;
 
     temp = start;
 
     
     if (temp == NULL) {
-        printf("Liste bo�, araya eleman eklenemez.\n");
+        printf("Liste bo?, araya eleman eklenemez.\n");
         return;
     }
 
@@ -54,7 +56,7 @@ void arayaEkle(int n, int veri) {
 
     
     if (temp == NULL) {
-        printf("Eleman listede bulunamad�.\n");
+        printf("Eleman listede bulunamad?.\n");
         free(eleman); 
         return;
     }
@@ -105,8 +107,8 @@ void aradanSil(int veri)
 	}
 	else
 	{
-		struct node * temp2;
-		temp2= (struct node *) malloc (sizeof(struct node  )) ;
+		struct bag * temp2;
+		temp2= (struct bag *) malloc (sizeof(struct bag  )) ;
 		
 		while(temp->next->data!= veri)
 		{
