@@ -1,19 +1,19 @@
 #include <stdio.h>
 
-struct dugum
+struct bag
 {
-	int veri;
-	struct dugum * gosterici;
+	int deger;
+	struct bag * gosterici;
 };
 
-struct dugum * bas =NULL;
-struct dugum * gecici =NULL;
+struct bag * bas =NULL;
+struct bag * gecici =NULL;
 
 void basaEkle(int sayi) 
 {
-	struct dugum * eklenecek;
-	eklenecek = (struct dugum * ) malloc (sizeof ( struct dugum )) ;
-	eklenecek -> veri =sayi;
+	struct bag * eklenecek;
+	eklenecek = (struct bag * ) malloc (sizeof ( struct bag )) ;
+	eklenecek -> deger =sayi;
 	eklenecek-> gosterici =bas;
 	bas=eklenecek;
 }
@@ -23,10 +23,10 @@ void yazdir()
 	gecici= bas;
 	while(gecici->gosterici!=NULL)
   {
-		printf (" %d ",gecici->veri);
+		printf (" %d ",gecici->deger);
 		gecici=gecici->gosterici;
 	}
-	printf(" %d ", gecici->veri);
+	printf(" %d ", gecici->deger);
 }
 
 
