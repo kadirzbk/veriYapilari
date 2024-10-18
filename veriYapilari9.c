@@ -1,26 +1,28 @@
+////////////// 9. DERS
+
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {
-    int data;
-    struct node *next;
+struct bag {
+    int veri;
+    struct bag *next;
 };
 
-struct node *start = NULL;
-struct node *temp = NULL;
+struct bag *start = NULL;
+struct bag *temp = NULL;
 
 void basaEkle(int veri) {
-    struct node *eleman;
-    eleman = (struct node *) malloc(sizeof(struct node));
-    eleman->data = veri;
+    struct bag *eleman;
+    eleman = (struct bag *) malloc(sizeof(struct bag));
+    eleman->veri = veri;
     eleman->next = start;
     start = eleman;
 }
 
 void sonaEkle(int veri) {
-    struct node *eleman;
-    eleman = (struct node *) malloc(sizeof(struct node));
-    eleman->data = veri;
+    struct bag *eleman;
+    eleman = (struct bag *) malloc(sizeof(struct bag));
+    eleman->veri = veri;
     eleman->next = NULL;
 
     if (start == NULL) {
@@ -35,26 +37,26 @@ void sonaEkle(int veri) {
 }
 
 void arayaEkle(int n, int veri) {
-    struct node *eleman;
-    eleman = (struct node *) malloc(sizeof(struct node));
-    eleman->data = veri;
+    struct bag *eleman;
+    eleman = (struct bag *) malloc(sizeof(struct bag));
+    eleman->veri = veri;
 
     temp = start;
 
     
     if (temp == NULL) {
-        printf("Liste bo�, araya eleman eklenemez.\n");
+        printf("Liste bo?, araya eleman eklenemez.\n");
         return;
     }
 
    
-    while (temp != NULL && temp->data != n) {
+    while (temp != NULL && temp->veri != n) {
         temp = temp->next;
     }
 
     
     if (temp == NULL) {
-        printf("Eleman listede bulunamad�.\n");
+        printf("Eleman listede bulunamad?.\n");
         free(eleman); 
         return;
     }
@@ -101,16 +103,16 @@ void aradanSil(int veri)
 	
 
 	temp= start;
-	if( temp->data==veri )
+	if( temp->veri==veri )
 	{
 		bastanSil();
 	}
 	else
 	{
-		struct node * temp2;
-		temp2= (struct node *) malloc (sizeof(struct node  )) ;
+		struct bag * temp2;
+		temp2= (struct bag *) malloc (sizeof(struct bag  )) ;
 		
-		while(temp->next->data!= veri)
+		while(temp->next->veri!= veri)
 		{
 			temp= temp->next;
 			
@@ -136,8 +138,8 @@ void aradanSil(int veri)
 
 void tersCevir()
 {
-	struct node * temp2= NULL;
-	struct node *prev= NULL;
+	struct bag * temp2= NULL;
+	struct bag *prev= NULL;
 	
 	temp= start;
 	 while(temp!= NULL )
@@ -163,14 +165,14 @@ void yazdir()
     
 	
 	{
-        printf("%d ", temp->data );
+        printf("%d ", temp->veri );
         temp = temp->next;
     } 
-	printf("%d ", temp->data );
+	printf("%d ", temp->veri );
    
     }
     else
-    printf("Eleman yok ! !") ;
+    printf("Eleman yok") ;
 }
 
 int main() {
